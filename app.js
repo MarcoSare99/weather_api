@@ -1,9 +1,12 @@
 import express from 'express';
+import cors from 'cors';
+
 import 'dotenv/config'
 
 const app = express();
 const apiKey = process.env.APIKEY;
 app.use(express.json());
+app.use(cors());
 // Ruta de ejemplo
 app.get('/', async (req, res) => {
     res.send("WEATHER API")
